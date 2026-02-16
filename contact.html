@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Attic Light Solutions</title>
+    <meta name="description" content="Book a free 30-minute consultation. Let's talk about what AI can do for your business.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo">Attic Light Solutions</a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="work.html">Work</a>
+                <a href="contact.html" class="nav-cta active">Get Started</a>
+            </div>
+            <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="contact.html">Get Started</a>
+    </div>
+
+    <main>
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <div class="hero-label">Get Started</div>
+                <h1>Let's figure out what<br><em>AI can do for you.</em></h1>
+                <p class="hero-sub">30 minutes. No pitch. Just a real conversation about your workflows and where AI fits in.</p>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <div class="contact-inner">
+                <div class="contact-form-wrap">
+                    <form action="https://formspree.io/f/placeholder" method="POST" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="you@company.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" placeholder="Your company (optional)">
+                        </div>
+                        <div class="form-group">
+                            <label for="service">What are you interested in?</label>
+                            <select id="service" name="service">
+                                <option value="">Select a service...</option>
+                                <option value="audit">AI Workflow Audit & Setup</option>
+                                <option value="strategy">AI Strategy Consulting</option>
+                                <option value="custom">Custom AI Tools & Apps</option>
+                                <option value="training">Training & Workshops</option>
+                                <option value="unsure">Not sure yet — let's talk</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Tell me about your situation</label>
+                            <textarea id="message" name="message" rows="5" placeholder="What's taking up too much of your team's time? What have you tried so far?"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-full">Send Message</button>
+                    </form>
+                </div>
+                <div class="contact-sidebar">
+                    <div class="contact-card">
+                        <h4>What happens next?</h4>
+                        <ol>
+                            <li>You fill out this form</li>
+                            <li>I'll respond within 24 hours</li>
+                            <li>We schedule a 30-min video call</li>
+                            <li>I'll share initial thoughts on where AI can help</li>
+                        </ol>
+                    </div>
+                    <div class="contact-card">
+                        <h4>Prefer email?</h4>
+                        <p><a href="mailto:brooks.traendly@gmail.com">brooks.traendly@gmail.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">Attic Light Solutions<p class="footer-tagline">AI consulting that actually works.</p></div>
+            <div class="footer-links"><a href="services.html">Services</a><a href="about.html">About</a><a href="work.html">Work</a><a href="contact.html">Contact</a></div>
+            <div class="footer-copy">&copy; 2026 Attic Light Solutions. All rights reserved.</div>
+        </div>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
