@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Readiness Checklist - Attic Light Solutions</title>
+    <meta name="description" content="A free, interactive self-assessment to find out if your business is ready for AI implementation. 24 questions, 3 minutes, no email required.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <meta property="og:title" content="AI Readiness Checklist - Attic Light Solutions">
+    <meta property="og:description" content="A free, interactive self-assessment to find out if your business is ready for AI implementation.">
+    <meta property="og:image" content="logo.png">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="AI Readiness Checklist - Attic Light Solutions">
+    <meta name="twitter:description" content="A free, interactive self-assessment to find out if your business is ready for AI implementation.">
+    <meta name="twitter:image" content="logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-logo"><img src="nav-logo.png" alt="Attic Light Solutions logo"> Attic Light Solutions</a>
+            <div class="nav-links">
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="work.html">Work</a>
+                <a href="contact.html" class="nav-cta">Get Started</a>
+            </div>
+            <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+    <div class="mobile-menu">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="work.html">Work</a>
+        <a href="contact.html">Get Started</a>
+    </div>
+
+    <main id="main">
+        <section class="page-hero">
+            <div class="page-hero-inner">
+                <div class="hero-label">Free Assessment</div>
+                <h1>Is your business ready<br><em>for AI?</em></h1>
+                <p class="hero-sub">Answer these 24 questions to find out where you stand - and what to focus on first. Takes about 3 minutes. No email required.</p>
+            </div>
+        </section>
+
+        <section class="checklist-progress" id="checklistProgress">
+            <div class="checklist-progress-inner">
+                <div class="checklist-progress-bar">
+                    <div class="checklist-progress-fill" id="progressFill"></div>
+                </div>
+                <div class="checklist-progress-text">
+                    <span id="progressCount">0</span> of 24 completed
+                    <span class="checklist-progress-pct" id="progressPct">0%</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="checklist-section">
+            <div class="checklist-inner">
+
+                <div class="checklist-category">
+                    <div class="checklist-category-header">
+                        <span class="checklist-category-num">01</span>
+                        <div>
+                            <h2>Workflow Clarity</h2>
+                            <p>Do you understand your own processes well enough for AI to help?</p>
+                        </div>
+                    </div>
+                    <div class="checklist-items">
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="wf-1">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We have documented our core business workflows (or could describe them step by step)</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="wf-2">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We know which tasks take the most employee time each week</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="wf-3">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We can identify at least 3 repetitive processes that follow a predictable pattern</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="wf-4">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We have a clear understanding of where bottlenecks slow our team down</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="wf-5">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We track how long key processes take from start to finish</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="checklist-category">
+                    <div class="checklist-category-header">
+                        <span class="checklist-category-num">02</span>
+                        <div>
+                            <h2>Tool & Data Readiness</h2>
+                            <p>Can your existing infrastructure support AI integration?</p>
+                        </div>
+                    </div>
+                    <div class="checklist-items">
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="td-1">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">Our business data lives in digital tools (not paper files or personal inboxes)</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="td-2">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We use cloud-based platforms (Google Workspace, Notion, Airtable, or similar)</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="td-3">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">Our team consistently uses the same tools for the same tasks</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="td-4">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We can export or access our data when we need to (not locked in silos)</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="td-5">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We have login and admin access to the tools our business depends on</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="checklist-category">
+                    <div class="checklist-category-header">
+                        <span class="checklist-category-num">03</span>
+                        <div>
+                            <h2>Team & Culture</h2>
+                            <p>Are the people in your organization ready for change?</p>
+                        </div>
+                    </div>
+                    <div class="checklist-items">
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="tc-1">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">At least one person on our team is curious about AI and willing to champion new tools</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="tc-2">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">Our team is open to changing how they work if it saves them time</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="tc-3">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">Leadership supports investing time in process improvement</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="tc-4">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We have capacity to spend 2-4 hours per week on implementation during a rollout</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="checklist-category">
+                    <div class="checklist-category-header">
+                        <span class="checklist-category-num">04</span>
+                        <div>
+                            <h2>Business Case</h2>
+                            <p>Is there real ROI potential for AI in your operations?</p>
+                        </div>
+                    </div>
+                    <div class="checklist-items">
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="bc-1">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We spend more than 10 hours per week on tasks that feel like they should be automated</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="bc-2">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We have experienced errors, delays, or missed deadlines due to manual processes</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="bc-3">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">Growing our output currently means hiring more people, not working smarter</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="bc-4">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We are paying for tools we are underusing or not using at all</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="bc-5">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We can estimate what an hour of our team's time costs the business</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="checklist-category">
+                    <div class="checklist-category-header">
+                        <span class="checklist-category-num">05</span>
+                        <div>
+                            <h2>AI Expectations</h2>
+                            <p>Are your expectations about AI grounded in reality?</p>
+                        </div>
+                    </div>
+                    <div class="checklist-items">
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="ae-1">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We understand that AI works best for structured, repeatable tasks</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="ae-2">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We are looking for practical time savings, not a trendy buzzword</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="ae-3">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We are willing to start with one or two workflows before trying to automate everything</span>
+                        </label>
+                        <label class="checklist-item">
+                            <input type="checkbox" name="checklist" value="ae-4">
+                            <span class="checklist-check"></span>
+                            <span class="checklist-label">We know that AI tools need human oversight and are not "set it and forget it"</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="checklist-results" id="checklistResults">
+            <div class="checklist-results-inner">
+                <div class="checklist-score-card">
+                    <div class="checklist-score-ring">
+                        <svg viewBox="0 0 120 120" class="score-svg">
+                            <circle cx="60" cy="60" r="52" class="score-track"/>
+                            <circle cx="60" cy="60" r="52" class="score-fill" id="scoreCircle"/>
+                        </svg>
+                        <span class="score-pct" id="scorePct">0%</span>
+                    </div>
+                    <div class="checklist-score-text">
+                        <h2 id="scoreTitle">Your AI Readiness Score</h2>
+                        <p id="scoreDescription">Check some items above to see your score.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section">
+            <div class="cta-inner">
+                <h2>Ready to take the next step?</h2>
+                <p>Whether you checked 5 boxes or all 24, a free 30-minute consultation will give you a clear picture of where AI fits in your business.</p>
+                <a href="contact.html" class="btn btn-primary btn-lg">Book Your Free Consultation</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-inner">
+            <div class="footer-brand">
+                Attic Light Solutions
+                <p class="footer-tagline">AI consulting that actually works.</p>
+            </div>
+            <div class="footer-links">
+                <a href="services.html">Services</a>
+                <a href="about.html">About</a>
+                <a href="work.html">Work</a>
+                <a href="contact.html">Contact</a>
+                <a href="checklist.html">AI Checklist</a>
+            </div>
+            <div class="footer-copy">&copy; 2026 Attic Light Solutions. All rights reserved.</div>
+        </div>
+    </footer>
+    <div class="sticky-cta" id="stickyCta">
+        <div class="sticky-cta-inner">
+            <span>Ready to automate your workflows?</span>
+            <a href="contact.html" class="btn btn-primary btn-sm">Book a Free Call</a>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
