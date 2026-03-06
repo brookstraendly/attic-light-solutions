@@ -304,6 +304,34 @@ ul, ol { list-style: none; }
     padding: 0.35rem 0.85rem; border-radius: 6px; font-size: 0.85rem; font-weight: 500;
 }
 
+/* ===== ADVISORS ===== */
+.advisors-section { padding: 6rem 2rem; background: var(--bg-elevated); border-top: 1px solid var(--border); }
+.advisors-inner { max-width: var(--max-w); margin: 0 auto; }
+.advisors-inner h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 400; margin-bottom: 3rem; }
+.advisors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.advisor-card {
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 2.5rem; text-align: center;
+    transition: border-color 0.3s;
+}
+.advisor-card:hover { border-color: rgba(242, 201, 76, 0.3); }
+.advisor-img {
+    width: 120px; height: 120px; border-radius: 50%;
+    object-fit: cover; border: 3px solid var(--border);
+    margin: 0 auto 1.5rem; transition: border-color 0.3s;
+}
+.advisor-card:hover .advisor-img { border-color: var(--accent); }
+.advisor-card h3 { font-size: 1.3rem; font-weight: 500; margin-bottom: 0.25rem; }
+.advisor-title { color: var(--accent); font-size: 0.9rem; font-weight: 500; margin-bottom: 1rem; }
+.advisor-bio { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; margin-bottom: 1.25rem; }
+.advisor-link { font-size: 0.9rem; font-weight: 500; }
+
+/* ===== NETWORK ===== */
+.network-section { padding: 6rem 2rem; }
+.network-inner { max-width: 720px; margin: 0 auto; text-align: center; }
+.network-inner h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem); font-weight: 400; margin-bottom: 1.5rem; }
+.network-inner p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.75; }
+
 /* ===== ABOUT HEADSHOT & PLACEHOLDERS ===== */
 .about-headshot { margin-bottom: 2rem; }
 .headshot-img {
@@ -473,6 +501,7 @@ ul, ol { list-style: none; }
     .step { flex-direction: column; gap: 0.75rem; }
     .step-num { font-size: 2rem; min-width: auto; }
     .about-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .advisors-grid { grid-template-columns: 1fr; }
     .contact-inner { grid-template-columns: 1fr; gap: 2rem; }
     .calendly-wrap, .calendly-inline-widget { min-height: 680px; height: 680px; }
     .sb-details { flex-direction: column; gap: 1rem; }
