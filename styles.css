@@ -754,6 +754,75 @@ ul, ol { list-style: none; }
 }
 
 /* ===== REDUCED MOTION ===== */
+/* ===== SCROLL REVEAL ANIMATION ===== */
+.scroll-reveal {
+    height: 500vh;
+    position: relative;
+    background: var(--bg);
+}
+
+.scroll-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--bg);
+}
+
+#product-canvas {
+    max-width: 100%;
+    max-height: 80vh;
+}
+
+.scroll-overlay {
+    position: absolute;
+    bottom: 6rem;
+    text-align: center;
+    max-width: 500px;
+    padding: 0 1.5rem;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.scroll-overlay h2 {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+}
+
+.scroll-overlay h2 em {
+    font-family: 'Instrument Serif', serif;
+    color: var(--accent);
+}
+
+.scroll-overlay p {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.scroll-progress-hint {
+    position: absolute;
+    bottom: 2rem;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    transition: opacity 0.4s;
+    animation: scroll-hint-pulse 2.5s infinite;
+}
+
+@keyframes scroll-hint-pulse {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.8; }
+}
+
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         animation-duration: 0.01ms !important;

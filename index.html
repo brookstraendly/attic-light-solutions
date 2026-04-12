@@ -211,6 +211,17 @@
             </div>
         </section>
 
+        <section class="scroll-reveal" id="scroll-reveal">
+            <div class="scroll-sticky">
+                <canvas id="product-canvas" width="1280" height="720"></canvas>
+                <div class="scroll-overlay" id="scrollOverlay">
+                    <h2>We look <em>inside</em> your business</h2>
+                    <p>Every AI system starts by understanding the machinery — your workflows, your data, your bottlenecks. Then we build what actually works.</p>
+                </div>
+                <div class="scroll-progress-hint" id="scrollHint">Scroll to explore</div>
+            </div>
+        </section>
+
         <section class="cta-section">
             <div class="cta-inner">
                 <h2>Ready to stop drowning in busywork?</h2>
@@ -277,6 +288,55 @@
         "logo": "logo.png",
         "sameAs": []
     }
+    </script>
+    <script>
+    // Scroll-driven frame animation
+    (function() {
+        const canvas = document.getElementById('product-canvas');
+        if (!canvas) return;
+        const ctx = canvas.getContext('2d');
+        const FRAME_COUNT = 240;
+        const frames = [];
+        const overlay = document.getElementById('scrollOverlay');
+        const hint = document.getElementById('scrollHint');
+
+        for (let i = 1; i <= FRAME_COUNT; i++) {
+            const img = new Image();
+            img.src = 'frames/frame_' + String(i).padStart(4, '0') + '.jpg';
+            frames.push(img);
+        }
+        frames[0].onload = function() { renderFrame(0); };
+
+        function renderFrame(index) {
+            var img = frames[index];
+            if (!img || !img.complete || !img.naturalWidth) return;
+            var scale = Math.max(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
+            var x = (canvas.width - img.naturalWidth * scale) / 2;
+            var y = (canvas.height - img.naturalHeight * scale) / 2;
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.drawImage(img, x, y, img.naturalWidth * scale, img.naturalHeight * scale);
+        }
+
+        var section = document.getElementById('scroll-reveal');
+        var ticking = false;
+        window.addEventListener('scroll', function() {
+            if (!ticking) {
+                requestAnimationFrame(function() {
+                    var rect = section.getBoundingClientRect();
+                    var progress = Math.max(0, Math.min(1, -rect.top / (section.offsetHeight - window.innerHeight)));
+                    renderFrame(Math.min(FRAME_COUNT - 1, Math.floor(progress * FRAME_COUNT)));
+                    if (overlay) {
+                        overlay.style.opacity = (progress > 0.6 && progress < 0.95) ? '1' : '0';
+                    }
+                    if (hint) {
+                        hint.style.opacity = progress < 0.05 ? '1' : '0';
+                    }
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        }, { passive: true });
+    })();
     </script>
     <script src="main.js"></script>
 </body>
