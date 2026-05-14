@@ -6,3 +6,9 @@ node_modules/
 logo-original.png
 *.pdf
 .vercel
+
+# Reel source + re-encrypt script contain the unencrypted page and the password.
+# Keep these local-only; only the encrypted reel.html is committed.
+reel.source.html
+encrypt-reel.sh
+.staticrypt.json

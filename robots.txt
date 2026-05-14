@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /reel.html
+Disallow: /reel
 
 Sitemap: https://atticlightsolutions.com/sitemap.xml
