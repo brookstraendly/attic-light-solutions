@@ -55,7 +55,7 @@
         <section class="contact-section">
             <div class="contact-inner">
                 <div class="calendly-wrap">
-                    <div class="calendly-inline-widget" data-url="https://calendly.com/brooks-traendly/30min?hide_gdpr_banner=1&background_color=0a0a0b&text_color=f0ece4&primary_color=f2c94c" style="min-width:320px;height:700px;"></div>
+                    <iframe id="als-book" src="https://the-attic-kappa.vercel.app/book/embed" title="Book a call with Brooks" loading="lazy" style="width:100%;min-width:320px;height:720px;border:0;border-radius:12px;"></iframe>
                 </div>
                 <div class="contact-sidebar">
                     <div class="contact-card">
@@ -83,7 +83,7 @@
             <div class="footer-copy">&copy; 2026 Attic Light Solutions. All rights reserved.</div>
         </div>
     </footer>
-    <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+    <script>addEventListener('message',function(e){if(e.data&&e.data.type==='attic-booking-height'){var f=document.getElementById('als-book');if(f)f.style.height=e.data.height+'px';}});</script>
     <script src="main.js"></script>
 </body>
 </html>
