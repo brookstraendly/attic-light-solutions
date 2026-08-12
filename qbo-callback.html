@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>QuickBooks Connection - Attic Light Solutions</title>
+    <style>
+        body { font-family: -apple-system, system-ui, sans-serif; max-width: 640px; margin: 4rem auto; padding: 0 1.5rem; color: #1a1a1a; }
+        .card { border: 1px solid #ddd; border-radius: 12px; padding: 2rem; }
+        code { background: #f4f4f4; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; word-break: break-all; }
+        button { font-size: 1rem; padding: 0.6rem 1.2rem; border-radius: 8px; border: 1px solid #1a1a1a; background: #1a1a1a; color: #fff; cursor: pointer; }
+        button:active { opacity: 0.7; }
+        .ok { color: #1a7f37; }
+        .err { color: #b42318; }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>QuickBooks authorization received</h2>
+        <div id="status"></div>
+        <p id="instructions" hidden>Copy this page's full URL and paste it into the terminal where <code>qbo-auth</code> is waiting:</p>
+        <p><button id="copyBtn" hidden>Copy URL to clipboard</button> <span id="copied" class="ok" hidden>Copied ✓</span></p>
+    </div>
+    <script>
+        const p = new URLSearchParams(location.search);
+        const status = document.getElementById('status');
+        if (p.get('code') && p.get('realmId')) {
+            status.innerHTML = '<p class="ok">✓ Authorization code and company ID are present.</p>';
+            document.getElementById('instructions').hidden = false;
+            const btn = document.getElementById('copyBtn');
+            btn.hidden = false;
+            btn.onclick = async () => {
+                await navigator.clipboard.writeText(location.href);
+                document.getElementById('copied').hidden = false;
+            };
+        } else if (p.get('error')) {
+            status.innerHTML = '<p class="err">Authorization was denied or failed: <code>' + p.get('error') + '</code></p>';
+        } else {
+            status.innerHTML = '<p>This page receives the redirect from the QuickBooks authorization flow. Nothing to see here otherwise.</p>';
+        }
+    </script>
+</body>
+</html>
