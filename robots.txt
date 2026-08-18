@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /reel.html
 Disallow: /reel
+Disallow: /video-portfolio.html
+Disallow: /video-portfolio
 
 Sitemap: https://atticlightsolutions.com/sitemap.xml
