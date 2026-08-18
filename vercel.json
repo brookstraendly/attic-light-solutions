@@ -1,0 +1,8 @@
+{
+  "rewrites": [
+    { "source": "/video-portfolio", "destination": "/reel.html" }
+  ],
+  "redirects": [
+    { "source": "/reel.html", "destination": "/video-portfolio", "permanent": false }
+  ]
+}
