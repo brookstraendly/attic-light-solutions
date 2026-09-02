@@ -389,6 +389,7 @@ ul, ol { list-style: none; }
 }
 .case-metric-card:hover { border-color: var(--accent); }
 
+.case-footer { margin-top: 1.75rem; }
 .case-results { display: flex; gap: 3rem; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--border); flex-wrap: wrap; }
 .cs-num { display: block; font-family: var(--serif); font-size: 2.5rem; color: var(--accent); }
 .cs-label { color: var(--text-muted); font-size: 0.85rem; }
