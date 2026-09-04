@@ -22,6 +22,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="canonical" href="https://atticlightsolutions.com/">
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to content</a>
@@ -59,7 +60,7 @@
             <div class="hero-content">
                 <div class="hero-label">Productized AI Installations</div>
                 <h1>Stop buying consulting hours.<br><em>Install an AI Operating System.</em></h1>
-                <p class="hero-sub">We deploy turnkey, high-leverage AI operating systems directly into your business — turning raw inputs into finished deliverables and multiplying your capacity without adding headcount.</p>
+                <p class="hero-sub">We deploy turnkey, high-leverage AI operating systems directly into your business, turning raw inputs into finished deliverables and multiplying your capacity without adding headcount.</p>
                 <div class="hero-actions">
                     <a href="contact.html" class="btn btn-primary">Book a Free Consultation</a>
                     <a href="services.html" class="btn btn-ghost">See How We Work →</a>
@@ -131,16 +132,16 @@
                     <div class="problem-card">
                         <div class="pc-icon">⏳</div>
                         <h3>Drowning in busywork</h3>
-                        <p>Your team spends hours on tasks that should take minutes — reformatting reports, processing invoices, manually tagging files. Work that AI can handle in seconds.</p>
+                        <p>Your team spends hours on tasks that should take minutes: reformatting reports, processing invoices, manually tagging files. Work that AI can handle in seconds.</p>
                     </div>
                     <div class="problem-card">
                         <div class="pc-icon">🔌</div>
                         <h3>Paying for tools you don't need</h3>
-                        <p>You're spending hundreds a month on subscriptions — video processing, tax prep, project management — for things AI can now do for free. We build the replacement.</p>
+                        <p>You're spending hundreds a month on subscriptions for video processing, tax prep, and project management, all things AI can now do for free. We build the replacement.</p>
                     </div>
                     <div class="problem-card">
                         <div class="pc-icon">🤷</div>
-                        <h3>AI exists — but it's not working for you</h3>
+                        <h3>AI exists, but it's not working for you</h3>
                         <p>Just because AI is available doesn't mean your business benefits from it. Without proper implementation, it's just another tool collecting dust.</p>
                     </div>
                 </div>
@@ -217,7 +218,7 @@
                 <canvas id="product-canvas" width="1280" height="720"></canvas>
                 <div class="scroll-overlay" id="scrollOverlay">
                     <h2>We look <em>inside</em> your business</h2>
-                    <p>Every AI system starts by understanding the machinery — your workflows, your data, your bottlenecks. Then we build what actually works.</p>
+                    <p>Every AI system starts by understanding the machinery: your workflows, your data, your bottlenecks. Then we build what actually works.</p>
                 </div>
                 <div class="scroll-progress-hint" id="scrollHint">Scroll to explore</div>
             </div>
@@ -301,12 +302,36 @@
         const overlay = document.getElementById('scrollOverlay');
         const hint = document.getElementById('scrollHint');
 
+        // 240 JPEGs is ~3.9 MB. Load only the first frame up front; fetch the
+        // rest when the section is about to scroll into view, and never on
+        // small screens or for people who asked for reduced motion (they get
+        // a still).
+        var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var small = window.innerWidth < 768;
+        var loadedAll = false;
+        function frameSrc(i) { return 'frames/frame_' + String(i).padStart(4, '0') + '.jpg'; }
         for (let i = 1; i <= FRAME_COUNT; i++) {
             const img = new Image();
-            img.src = 'frames/frame_' + String(i).padStart(4, '0') + '.jpg';
+            if (i === 1) img.src = frameSrc(i);
             frames.push(img);
         }
         frames[0].onload = function() { renderFrame(0); };
+        function loadAllFrames() {
+            if (loadedAll) return;
+            loadedAll = true;
+            for (let i = 2; i <= FRAME_COUNT; i++) frames[i - 1].src = frameSrc(i);
+        }
+        var sectionEl = document.getElementById('scroll-reveal');
+        if (!reduced && !small && sectionEl) {
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function(entries) {
+                    if (entries.some(function(e) { return e.isIntersecting; })) { loadAllFrames(); io.disconnect(); }
+                }, { rootMargin: '100% 0px' });
+                io.observe(sectionEl);
+            } else {
+                loadAllFrames();
+            }
+        }
 
         function renderFrame(index) {
             var img = frames[index];
@@ -325,7 +350,7 @@
                 requestAnimationFrame(function() {
                     var rect = section.getBoundingClientRect();
                     var progress = Math.max(0, Math.min(1, -rect.top / (section.offsetHeight - window.innerHeight)));
-                    renderFrame(Math.min(FRAME_COUNT - 1, Math.floor(progress * FRAME_COUNT)));
+                    renderFrame((reduced || small) ? 0 : Math.min(FRAME_COUNT - 1, Math.floor(progress * FRAME_COUNT)));
                     if (overlay) {
                         overlay.style.opacity = (progress > 0.6 && progress < 0.95) ? '1' : '0';
                     }
