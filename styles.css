@@ -839,3 +839,89 @@ ul, ol { list-style: none; }
     .checklist-progress-fill { transition: none; }
     .score-fill { transition: none; }
 }
+
+/* ===== HOMEPAGE V2 ===== */
+.section-label {
+    font-size: 0.8rem; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 1.25rem;
+}
+.audience h2, .offers h2, .founder h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 3.5rem;
+}
+.audience h2 em, .offers h2 em, .founder h2 em { font-style: italic; color: var(--accent); }
+
+.text-link {
+    display: inline-flex; align-items: center; gap: 0.75rem;
+    color: var(--text); text-decoration: none; font-size: 0.95rem;
+}
+.text-link::after {
+    content: ''; width: 2rem; height: 1px; background: var(--accent);
+    transition: width 0.3s var(--ease);
+}
+.text-link:hover::after { width: 3rem; }
+.hero-actions .text-link { padding: 0 0.5rem; }
+
+.gc-kicker {
+    display: block; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--text-muted); margin-bottom: 1rem; line-height: 1.5;
+}
+
+.audience { padding: 8rem 2rem; }
+.audience-inner, .offers-inner, .proof-inner { max-width: var(--max-w); margin: 0 auto; }
+.audience-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border); }
+.audience-item { padding: 2rem 1.5rem 0 0; }
+.audience-item + .audience-item { padding-left: 1.5rem; border-left: 1px solid var(--border); }
+.audience-item h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.6rem; }
+.audience-item p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+
+.offers { padding: 8rem 2rem; background: var(--bg-elevated); }
+.offer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
+.offer-card {
+    display: flex; flex-direction: column; padding: 2rem;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px;
+    color: var(--text); text-decoration: none;
+    transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+}
+.offer-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+.offer-start { background: linear-gradient(135deg, var(--bg-card), rgba(242, 201, 76, 0.08)); }
+.offer-tag {
+    align-self: flex-start; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--accent); background: var(--accent-subtle); padding: 0.3rem 0.7rem; border-radius: 99px;
+    margin-bottom: 1rem;
+}
+.offer-card h3 { font-family: var(--serif); font-weight: 400; font-size: 1.7rem; line-height: 1.2; margin-bottom: 0.75rem; }
+.offer-card p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; flex: 1; }
+.offer-meta {
+    display: flex; justify-content: space-between; gap: 1rem; margin-top: 1.5rem; padding-top: 1.25rem;
+    border-top: 1px solid var(--border); font-size: 0.85rem; color: var(--text-muted);
+}
+.offer-meta span:last-child { color: var(--accent); }
+
+.proof { padding: 7rem 2rem; }
+.proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+.proof-item { color: var(--text); text-decoration: none; padding-top: 1.5rem; border-top: 1px solid var(--accent); }
+.proof-client { display: block; font-family: var(--serif); font-size: 1.5rem; line-height: 1.2; margin-bottom: 0.75rem; }
+.proof-item p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; }
+.proof-item:hover .proof-client { color: var(--accent); }
+
+.founder { padding: 8rem 2rem; background: var(--bg-elevated); }
+.founder-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 220px 1fr; gap: 4rem; align-items: center; }
+.founder-photo { width: 220px; height: 220px; object-fit: cover; border-radius: 50%; border: 1px solid var(--border); }
+.founder h2 { margin-bottom: 1.5rem; }
+.founder-copy p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.75rem; }
+
+@media (max-width: 900px) {
+    .audience-grid { grid-template-columns: repeat(2, 1fr); }
+    .audience-item:nth-child(3) { padding-left: 0; border-left: 0; }
+    .offer-grid, .proof-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+    .audience, .offers, .founder { padding: 5rem 1rem; }
+    .proof { padding: 4.5rem 1rem; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .audience-item, .audience-item + .audience-item { padding: 1.5rem 0 0; border-left: 0; }
+    .founder-inner { grid-template-columns: 1fr; gap: 2rem; text-align: left; }
+    .founder-photo { width: 140px; height: 140px; }
+    .offer-card { padding: 1.5rem; }
+}
