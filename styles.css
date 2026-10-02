@@ -925,3 +925,8 @@ ul, ol { list-style: none; }
     .founder-photo { width: 140px; height: 140px; }
     .offer-card { padding: 1.5rem; }
 }
+a.grid-card { color: var(--text); text-decoration: none; display: block; }
+.founder-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin: 0 0 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border); }
+.founder-stats div { color: var(--text-muted); font-size: 0.85rem; line-height: 1.45; }
+.founder-stats span { display: block; font-family: var(--serif); font-size: 1.9rem; color: var(--accent); line-height: 1.1; margin-bottom: 0.35rem; }
+@media (max-width: 600px) { .founder-stats { grid-template-columns: 1fr; gap: 1rem; } }
