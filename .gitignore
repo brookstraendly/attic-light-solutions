@@ -12,3 +12,6 @@ logo-original.png
 reel.source.html
 encrypt-reel.sh
 .staticrypt.json
+
+# The House Calls brochure is linked from house-calls.html, so it ships.
+!house-calls-brochure.pdf
