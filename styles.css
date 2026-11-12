@@ -874,6 +874,7 @@ ul, ol { list-style: none; }
 .audience-item + .audience-item { padding-left: 1.5rem; border-left: 1px solid var(--border); }
 .audience-item h3 { font-size: 1.05rem; font-weight: 500; margin-bottom: 0.6rem; }
 .audience-item p { color: var(--text-muted); font-size: 0.92rem; line-height: 1.6; }
+.audience-note { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border); color: var(--text-muted); font-size: 0.98rem; }
 
 .offers { padding: 8rem 2rem; background: var(--bg-elevated); }
 .offer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-bottom: 2.5rem; }
