@@ -281,7 +281,7 @@ ul, ol { list-style: none; }
 .sb-detail strong { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); }
 .sb-detail span { font-size: 1.1rem; font-weight: 500; }
 .sb-includes { border-top: 1px solid var(--border); padding-top: 1.5rem; }
-.sb-includes h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1rem; }
+.sb-includes h3, .sb-includes h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); margin-bottom: 1rem; }
 .sb-includes ul { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; }
 .sb-includes li { color: var(--text-muted); font-size: 0.95rem; padding-left: 1.25rem; position: relative; }
 .sb-includes li::before { content: '→'; position: absolute; left: 0; color: var(--accent); }
@@ -295,7 +295,7 @@ ul, ol { list-style: none; }
     background: var(--bg-elevated); border: 1px solid var(--border);
     border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;
 }
-.about-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1rem; }
+.about-card h3, .about-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1rem; }
 .about-card li { color: var(--text-muted); font-size: 0.95rem; padding: 0.4rem 0; padding-left: 1.25rem; position: relative; }
 .about-card li::before { content: '◈'; position: absolute; left: 0; color: var(--accent); font-size: 0.7rem; top: 0.55rem; }
 .tool-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -409,7 +409,7 @@ ul, ol { list-style: none; }
     background: var(--bg-elevated); border: 1px solid var(--border);
     border-radius: 12px; padding: 2rem; margin-bottom: 1.5rem;
 }
-.contact-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1rem; }
+.contact-card h2, .contact-card h4 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1rem; }
 .contact-card ol { padding-left: 0; counter-reset: steps; }
 .contact-card li { color: var(--text-muted); font-size: 0.95rem; padding: 0.5rem 0 0.5rem 2rem; position: relative; counter-increment: steps; }
 .contact-card li::before { content: counter(steps); position: absolute; left: 0; color: var(--accent); font-family: var(--serif); font-size: 1.1rem; }
@@ -931,3 +931,29 @@ a.grid-card { color: var(--text); text-decoration: none; display: block; }
 .founder-stats div { color: var(--text-muted); font-size: 0.85rem; line-height: 1.45; }
 .founder-stats span { display: block; font-family: var(--serif); font-size: 1.9rem; color: var(--accent); line-height: 1.1; margin-bottom: 0.35rem; }
 @media (max-width: 600px) { .founder-stats { grid-template-columns: 1fr; gap: 1rem; } }
+
+/* ===== SERVICES: jump menu, groups, package prices ===== */
+.svc-jump { padding: 0 2rem 1rem; }
+.svc-jump-inner { max-width: var(--max-w); margin: 0 auto; display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; }
+.svc-jump-inner span { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.14em; color: var(--text-muted); margin-right: 0.5rem; }
+.svc-jump-inner a { display: inline-flex; align-items: center; min-height: 40px; padding: 0.35rem 0.95rem; border: 1px solid var(--border); border-radius: 100px; color: var(--text); font-size: 0.88rem; text-decoration: none; transition: border-color 0.2s, color 0.2s; }
+.svc-jump-inner a:hover { border-color: var(--accent); color: var(--accent); }
+.sb-group { margin: 3.5rem 0 1.25rem; padding-bottom: 0.9rem; border-bottom: 1px solid var(--border); color: var(--text-muted); font-size: 0.98rem; }
+.sb-group:first-child { margin-top: 0.5rem; }
+.sb-group span { display: block; font-family: var(--serif); font-size: 1.9rem; color: var(--text); line-height: 1.2; margin-bottom: 0.2rem; }
+.service-block, #packages { scroll-margin-top: 96px; }
+.pc-price { font-family: var(--serif); font-size: 2.2rem; color: var(--accent); line-height: 1.1; margin-bottom: 0.6rem; }
+.hero-video { background: #0a0a0b; }
+@media (max-width: 768px) {
+    .svc-jump { padding: 0 1rem 0.5rem; }
+    .svc-jump-inner a { font-size: 0.85rem; }
+}
+
+/* ===== PHONES: give card text the full width ===== */
+@media (max-width: 600px) {
+    .services-detail, .case-studies { padding-left: 1rem; padding-right: 1rem; }
+    .service-block, .case-card { padding: 1.75rem 1.35rem; border-radius: 14px; }
+    .problem-card { padding: 1.75rem 1.35rem; }
+    .about-card, .contact-card { padding: 1.5rem 1.35rem; }
+    .sb-group span { font-size: 1.6rem; }
+}
