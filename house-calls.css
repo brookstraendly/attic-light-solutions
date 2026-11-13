@@ -183,7 +183,33 @@
 .hc-fine { font-size: 0.8em; color: var(--hc-dim); margin-top: 2rem; max-width: 80ch; }
 .hc-section.night .hc-fine { color: #a39d91; }
 
+/* ===== SHORT VERSION =====
+   The public page says less up front. Detail sits behind a tap. */
+.hc-short .hc-section { padding: 4.2rem 0; }
+.hc-short .hc-hero .hc-sub { font-size: 1.3em; }
+.hc-rows { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 2.4rem; margin-top: 1.6rem; border-top: 2px solid var(--hc-ink); }
+.hc details.hc-row { margin: 0; border-top: 0; border-bottom: 1.5px solid var(--hc-rule); }
+.hc details.hc-row summary { padding: 1rem 0; align-items: center; font-weight: 400; min-height: 64px; }
+.hc-row .hc-n { font-size: 0.72em; font-weight: 700; letter-spacing: 0.08em; color: var(--hc-gold-deep); flex: none; width: 2.2em; }
+.hc-row .hc-t { flex: 1; color: var(--hc-body); font-size: 1em; line-height: 1.35; }
+.hc-row .hc-t b { display: block; font-family: var(--serif); font-weight: 400; font-size: 1.45em; color: var(--hc-ink); line-height: 1.15; }
+.hc-row ul.hc-ticks { padding: 0 0 1.1rem 2.2em; }
+.hc-plans.hc-plans-4 { grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+.hc-plans-4 .hc-plan { padding: 1.5rem 1.3rem 1rem; }
+.hc-plans-4 .hc-plan h3 { font-size: 1.35em; }
+.hc-plans-4 .hc-price { font-size: 2.6em; }
+.hc-plans-4 .hc-price small { font-size: 0.34em; }
+.hc-where-line { margin-top: 1.6rem; font-size: 0.98em; color: var(--hc-ink); max-width: none; }
+.hc-promises.hc-promises-4 { grid-template-columns: repeat(4, 1fr); gap: 1.2rem; margin-top: 1.6rem; }
+.hc-promises-4 .hc-promise { grid-template-columns: 1fr; gap: 0.7rem; background: var(--hc-panel); border: 1.5px solid var(--hc-rule); border-radius: 14px; padding: 1.3rem 1.2rem 1.4rem; }
+.hc-promises-4 .hc-promise b { font-family: var(--serif); font-weight: 400; font-size: 1.4em; line-height: 1.2; }
+.hc-duo { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; }
+.hc-duo h2 { font-size: clamp(1.8em, 3.2vw, 2.3em); }
+
 @media (max-width: 900px) {
+    .hc-rows { grid-template-columns: 1fr; }
+    .hc-plans.hc-plans-4, .hc-promises.hc-promises-4 { grid-template-columns: 1fr 1fr; }
+    .hc-duo { grid-template-columns: 1fr; gap: 2.6rem; }
     .hc-hero .hc-wrap, .hc-made, .hc-family, .hc-cta .hc-wrap { grid-template-columns: 1fr; gap: 2.4rem; }
     .hc-three, .hc-extras { grid-template-columns: 1fr; }
     .hc-areas, .hc-plans, .hc-promises { grid-template-columns: 1fr; }
@@ -200,6 +226,7 @@
     .hc.hc-size-3 { font-size: 22.5px; }
     .hc-wrap { padding: 0 1.15rem; }
     .hc-steps, .hc-ideas { grid-template-columns: 1fr; }
+    .hc-plans.hc-plans-4, .hc-promises.hc-promises-4 { grid-template-columns: 1fr; }
     .hc-actions .hc-btn { width: 100%; }
     .hc-sizebar .hc-wrap { justify-content: space-between; }
 }

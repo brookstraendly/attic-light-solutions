@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0b">
     <title>Attic Light Solutions - AI Systems, Installed by an Operator</title>
     <meta name="description" content="We find where your team's hours go and install AI systems that do that work. Led by an operator who scaled a production company from 25 to 2,000+ people.">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -21,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20261113">
     <link rel="canonical" href="https://atticlightsolutions.com/">
 </head>
 <body>
@@ -29,7 +30,7 @@
     <nav class="nav" role="navigation" aria-label="Main navigation">
         <div class="nav-inner">
             <a href="index.html" class="nav-logo">
-                <img src="nav-logo.png" alt="Attic Light Solutions logo">
+                <img src="nav-logo.png" alt="" width="36" height="36">
                 Attic Light Solutions
             </a>
             <div class="nav-links">
@@ -53,9 +54,7 @@
 
     <main id="main">
         <section class="hero hero-video-bg">
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="hero-bg.mp4" type="video/mp4">
-            </video>
+            <video class="hero-video" id="heroVideo" muted loop playsinline preload="none" poster="hero-poster.jpg" data-src="hero-bg-720.mp4" aria-hidden="true" tabindex="-1"></video>
             <div class="hero-video-overlay"></div>
             <div class="hero-content">
                 <div class="hero-label">AI systems, installed by an operator</div>
@@ -68,7 +67,7 @@
             </div>
             <div class="hero-visual">
                 <div class="hero-grid">
-                    <a href="services.html" class="grid-card gc-1">
+                    <a href="services.html#audit" class="grid-card gc-1">
                         <span class="gc-kicker">Start here</span>
                         <span class="gc-number">5 days</span>
                         <span class="gc-label">AI Readiness Audit, from $1,500. A ranked plan for where AI pays off first.</span>
@@ -116,23 +115,23 @@
                 <div class="section-label">What we install</div>
                 <h2>Fixed scope. Fixed price.<br><em>You own everything.</em></h2>
                 <div class="offer-grid">
-                    <a href="services.html" class="offer-card offer-start">
+                    <a href="services.html#audit" class="offer-card offer-start">
                         <span class="offer-tag">Start here</span>
                         <h3>AI Readiness Audit</h3>
                         <p>A one-week diagnostic that follows the hours, not the hype. You get a ranked list of what to automate first and what to leave alone.</p>
                         <div class="offer-meta"><span>5 days</span><span>From $1,500</span></div>
                     </a>
-                    <a href="services.html" class="offer-card">
+                    <a href="services.html#talk-to-your-business" class="offer-card">
                         <h3>Talk to Your Business</h3>
                         <p>Your books, store, payroll, and CRM inside Claude. Ask why margin dipped and get an answer grounded in your real numbers.</p>
                         <div class="offer-meta"><span>2 weeks</span><span>From $4,000</span></div>
                     </a>
-                    <a href="services.html" class="offer-card">
+                    <a href="services.html#operating-system" class="offer-card">
                         <h3>AI Operating System</h3>
                         <p>Custom agents, automated briefings, and workflows built around how your team already works, with a test suite that proves it still works.</p>
                         <div class="offer-meta"><span>2-4 weeks</span><span>From $5,000</span></div>
                     </a>
-                    <a href="services.html" class="offer-card">
+                    <a href="services.html#livestream" class="offer-card">
                         <h3>Investor Day &amp; Livestream Production</h3>
                         <p>Earnings calls, roadshows, and town halls run on a 15,000-show playbook, with AI handling prep, captions, and next-morning cutdowns.</p>
                         <div class="offer-meta"><span>2-6 weeks lead</span><span>From $10,000</span></div>
@@ -206,7 +205,7 @@
 
         <section class="founder">
             <div class="founder-inner">
-                <img src="headshot.jpg" alt="Brooks Traendly" class="founder-photo" width="220" height="220" loading="lazy">
+                <img src="headshot.jpg" alt="Brooks Traendly" class="founder-photo" width="220" height="220" loading="lazy" decoding="async">
                 <div class="founder-copy">
                     <div class="section-label">The founder</div>
                     <h2>One senior operator. <em>Start to finish.</em></h2>
@@ -241,7 +240,7 @@
                         <input type="email" id="leadEmail" name="email" placeholder="you@company.com" required aria-label="Email address">
                         <button type="submit" class="btn btn-primary">Send It →</button>
                     </div>
-                    <span class="lead-magnet-note" id="leadNote">No spam. Unsubscribe anytime.</span>
+                    <span class="lead-magnet-note" id="leadNote" aria-live="polite">No spam. Unsubscribe anytime.</span>
                 </form>
             </div>
         </section>
@@ -253,25 +252,18 @@
                 Attic Light Solutions
                 <p class="footer-tagline">Productized AI installations that scale your capacity.</p>
             </div>
-            <div class="footer-links">
-                <a href="services.html">Services</a>
-                <a href="about.html">About</a>
-                <a href="work.html">Work</a>
-                <a href="contact.html">Contact</a>
-                <a href="checklist.html">AI Checklist</a>
-                <a href="house-calls.html">House Calls</a>
-            </div>
+            <div class="footer-links"><a href="services.html">Services</a><a href="about.html">About</a><a href="work.html">Work</a><a href="contact.html">Contact</a><a href="checklist.html">AI Checklist</a><a href="house-calls.html">House Calls</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a></div>
             <div class="footer-copy">
                 &copy; 2026 Attic Light Solutions. All rights reserved.
             </div>
         </div>
     </footer>
-    <div class="sticky-cta" id="stickyCta">
+    <aside class="sticky-cta" id="stickyCta" aria-label="Book a call">
         <div class="sticky-cta-inner">
             <span>Ready to automate your workflows?</span>
             <a href="contact.html" class="btn btn-primary btn-sm">Book a Free Call</a>
         </div>
-    </div>
+    </aside>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -285,9 +277,24 @@
         "serviceType": ["AI Consulting", "Workflow Automation", "AI Implementation", "Business Process Optimization"],
         "email": "hello@atticlightsolutions.com",
         "url": "https://atticlightsolutions.com",
-        "logo": "logo.png",
+        "logo": "https://atticlightsolutions.com/logo.png",
+        "image": "https://atticlightsolutions.com/og-image.png",
         "sameAs": []
     }
+    </script>
+    <script>
+    // Hero film: the poster shows first. The video loads only on larger screens,
+    // and never for people who asked for reduced motion or data saving.
+    (function () {
+        var v = document.getElementById('heroVideo');
+        if (!v) return;
+        var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        var saver = navigator.connection && navigator.connection.saveData;
+        if (reduced || saver || window.innerWidth < 768) return;
+        v.src = v.getAttribute('data-src');
+        var p = v.play();
+        if (p && p.catch) p.catch(function () {});
+    })();
     </script>
     <script>
     // Scroll-driven frame animation
