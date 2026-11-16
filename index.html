@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20261113">
+    <link rel="stylesheet" href="styles.css?v=20261116">
     <link rel="canonical" href="https://atticlightsolutions.com/">
 </head>
 <body>
@@ -159,6 +159,13 @@
                         <span class="proof-client">A production team's video archive</span>
                         <p>Every video tagged, transcribed, and searchable by what was said.</p>
                     </a>
+                </div>
+                <!-- Live strip: filled by main.js from the hub's public totals feed
+                     (the-attic /api/proof). Stays hidden unless real numbers arrive. -->
+                <div class="live-strip" id="liveStrip" hidden>
+                    <div class="live-head"><span class="live-dot" aria-hidden="true"></span>Live from our own system</div>
+                    <p class="live-line"><strong id="liveRuns"></strong> automated runs <span id="liveWindow"></span>, across <strong id="liveJobs"></strong> scheduled jobs.<span id="liveLast"></span></p>
+                    <p class="live-note">We run our own business on what we build for clients. These numbers come straight from it.</p>
                 </div>
                 <!-- TODO before launch: one real, named client quote goes here (ask Travis or Barrett at Chapman's, or Roger). Do not ship an anonymous quote. -->
             </div>
@@ -371,6 +378,6 @@
         }, { passive: true });
     })();
     </script>
-    <script src="main.js"></script>
+    <script src="main.js?v=20261116"></script>
 </body>
 </html>
