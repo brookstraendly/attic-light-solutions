@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300..700;1,9..40,300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css?v=20261116">
+    <link rel="stylesheet" href="styles.css?v=20261116b">
     <link rel="canonical" href="https://atticlightsolutions.com/">
 </head>
 <body>
@@ -85,6 +85,12 @@
                 </div>
             </div>
         </section>
+
+        <!-- Live band: filled by main.js from the hub's public totals feed
+             (the-attic /api/proof). Stays hidden unless real numbers arrive. -->
+        <div class="live-band" id="liveStrip" hidden>
+            <p class="live-band-inner"><span class="live-dot" aria-hidden="true"></span><span class="live-tag">Live</span><span class="live-text"><strong id="liveRuns"></strong> automated runs <span id="liveWindow"></span> across <strong id="liveJobs"></strong> scheduled jobs<span id="liveLast"></span></span></p>
+        </div>
 
         <section class="audience">
             <div class="audience-inner">
@@ -160,13 +166,6 @@
                         <p>Every video tagged, transcribed, and searchable by what was said.</p>
                     </a>
                 </div>
-                <!-- Live strip: filled by main.js from the hub's public totals feed
-                     (the-attic /api/proof). Stays hidden unless real numbers arrive. -->
-                <div class="live-strip" id="liveStrip" hidden>
-                    <div class="live-head"><span class="live-dot" aria-hidden="true"></span>Live from our own system</div>
-                    <p class="live-line"><strong id="liveRuns"></strong> automated runs <span id="liveWindow"></span>, across <strong id="liveJobs"></strong> scheduled jobs.<span id="liveLast"></span></p>
-                    <p class="live-note">We run our own business on what we build for clients. These numbers come straight from it.</p>
-                </div>
                 <!-- TODO before launch: one real, named client quote goes here (ask Travis or Barrett at Chapman's, or Roger). Do not ship an anonymous quote. -->
             </div>
         </section>
@@ -218,7 +217,7 @@
                 <div class="founder-copy">
                     <div class="section-label">The founder</div>
                     <h2>One senior operator. <em>Start to finish.</em></h2>
-                    <p>I spent 15 years building production operations for financial services: thousands of live events a year, where the process had to hold up under pressure. Now I build AI systems the same way. I lead every engagement myself and bring in specialists from my network only when your problem needs them.</p>
+                    <p>I spent 15 years building production operations for financial services: thousands of live events a year, where the process had to hold up under pressure. Now I build AI systems the same way. I lead every engagement myself and bring in specialists from my network only when your problem needs them. And I run my own business on the same kind of system I build for clients.</p>
                     <div class="founder-stats">
                         <div><span>15,000+</span>Livestreams for banks and public companies</div>
                         <div><span>350+</span>IPO presentations</div>
@@ -378,6 +377,6 @@
         }, { passive: true });
     })();
     </script>
-    <script src="main.js?v=20261116"></script>
+    <script src="main.js?v=20261116b"></script>
 </body>
 </html>

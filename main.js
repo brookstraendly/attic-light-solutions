@@ -264,7 +264,7 @@ if (checklistItems.length > 0) {
                     : mins === 1 ? '1 minute ago'
                     : mins < 60 ? mins + ' minutes ago'
                     : Math.round(mins / 60) === 1 ? 'an hour ago' : Math.round(mins / 60) + ' hours ago';
-                document.getElementById('liveLast').textContent = ' The most recent one finished ' + ago + '.';
+                document.getElementById('liveLast').textContent = ' \u00b7 most recent ' + ago;
             }
             strip.hidden = false;
         })
