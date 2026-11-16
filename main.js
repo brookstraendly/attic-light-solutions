@@ -240,3 +240,33 @@ if (checklistItems.length > 0) {
         cat.style.transitionDelay = `${i * 0.1}s`;
     });
 }
+
+// Live strip (home page): real totals from the system that runs Attic Light.
+// The feed returns counts only. If it is slow, down, or empty, the strip stays
+// hidden; the page never shows a number it did not just receive.
+(function () {
+    var strip = document.getElementById('liveStrip');
+    if (!strip || !window.fetch) return;
+    var ctrl = window.AbortController ? new AbortController() : null;
+    if (ctrl) setTimeout(function () { ctrl.abort(); }, 6000);
+    fetch('https://the-attic-kappa.vercel.app/api/proof', ctrl ? { signal: ctrl.signal } : undefined)
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) {
+            if (!d || !(d.runs > 0) || !(d.jobs > 0) || !(d.window_days > 0)) return;
+            var fmt = function (n) { return Number(n).toLocaleString('en-US'); };
+            document.getElementById('liveRuns').textContent = fmt(d.runs);
+            document.getElementById('liveJobs').textContent = fmt(d.jobs);
+            document.getElementById('liveWindow').textContent =
+                d.window_days === 1 ? 'in the last day' : 'in the last ' + d.window_days + ' days';
+            var mins = d.last_run_at ? Math.round((Date.now() - Date.parse(d.last_run_at)) / 60000) : NaN;
+            if (mins >= 0 && mins < 180) {
+                var ago = mins < 1 ? 'under a minute ago'
+                    : mins === 1 ? '1 minute ago'
+                    : mins < 60 ? mins + ' minutes ago'
+                    : Math.round(mins / 60) === 1 ? 'an hour ago' : Math.round(mins / 60) + ' hours ago';
+                document.getElementById('liveLast').textContent = ' The most recent one finished ' + ago + '.';
+            }
+            strip.hidden = false;
+        })
+        .catch(function () { /* stay hidden */ });
+})();
