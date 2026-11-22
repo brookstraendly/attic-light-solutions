@@ -967,3 +967,33 @@ a.grid-card { color: var(--text); text-decoration: none; display: block; }
     .about-card, .contact-card { padding: 1.5rem 1.35rem; }
     .sb-group span { font-size: 1.6rem; }
 }
+
+/* ===== HOMEPAGE: philosophy ===== */
+.philosophy { padding: 8rem 2rem; border-top: 1px solid var(--border); }
+.philosophy-inner { max-width: var(--max-w); margin: 0 auto; }
+.philosophy h2 {
+    font-family: var(--serif); font-weight: 400;
+    font-size: clamp(2rem, 4vw, 3.2rem); line-height: 1.15; margin-bottom: 2rem;
+}
+.philosophy h2 em { font-style: italic; color: var(--accent); }
+.philosophy-intro { max-width: 680px; margin-bottom: 3.5rem; }
+.philosophy-intro p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.7; }
+.philosophy-intro p + p { margin-top: 1rem; color: var(--text); }
+.principles {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; grid-template-columns: repeat(2, 1fr); column-gap: 4rem;
+    border-top: 1px solid var(--border);
+}
+.principle { display: grid; grid-template-columns: 3.5rem 1fr; align-content: start; column-gap: 1rem; padding: 2rem 0; border-bottom: 1px solid var(--border); }
+.principle-num { grid-row: span 2; font-family: var(--serif); font-size: 2rem; line-height: 1; color: var(--accent); opacity: 0.6; }
+.principle h3 { font-size: 1.15rem; font-weight: 500; margin-bottom: 0.5rem; }
+.principle p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.65; }
+.philosophy-close { margin-top: 2.5rem; font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2.2vw, 1.6rem); line-height: 1.4; max-width: 760px; }
+@media (max-width: 900px) {
+    .principles { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+    .philosophy { padding: 5rem 1rem; }
+    .principle { grid-template-columns: 2.5rem 1fr; padding: 1.5rem 0; }
+    .principle-num { font-size: 1.6rem; }
+}
